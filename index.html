@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagha P V - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to bottom right, #0a0b12, #1e202e);
+            color: #e2e8f0;
+            position: relative;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease;
+        }
+
+        .text-custom-light {
+            color: #a0aec0;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .project-card:hover .project-title {
+            text-decoration: underline;
+        }
+        .navbar-link {
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 1rem;
+            color: #cbd5e0;
+        }
+        .navbar-link:hover {
+            color: #60a5fa; /* Adjusted hover color for a new look */
+        }
+        .navbar-link.active-link {
+            font-weight: bold;
+            color: #60a5fa; /* Adjusted active link color for a new look */
+        }
+        .contact-form button {
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+        }
+        .hero-text {
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .contact-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+            border-color: #3b82f6;
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-icon-bg {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            border-radius: 9999px;
+            padding: 0.75rem;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+        }
+
+        .search-results p {
+            margin-bottom: 0.5rem;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 p-4">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto p-4 rounded-full shadow-lg bg-white bg-opacity-30 backdrop-blur-lg">
+            <div class="text-xl font-bold text-white">Anagha P V</div>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="navbar-link text-gray-200">Home</a></li>
+                <li><a href="#work" class="navbar-link text-gray-200">Work</a></li>
+                <li><a href="#certificates" class="navbar-link text-gray-200">Certificates</a></li>
+                <li><a href="#contact" class="navbar-link text-gray-200">Contact</a></li>
+                <li><a href="#search" class="navbar-link text-gray-200">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-24 pb-12 px-4 md:px-8 max-w-6xl mx-auto">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <!-- About Me Section -->
+            <section class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="md:w-1/2">
+                    <h1 class="text-6xl md:text-8xl font-black mb-4 hero-text uppercase text-white">
+                        I'm Anagha
+                    </h1>
+                    <p class="text-xl font-light text-gray-400 mb-6 hero-text max-w-3xl">
+                        A final year BTech Computer Science student with a strong foundation in programming, web development, and teamwork. I am a quick learner with a passion for solving real-world problems through technology.
+                    </p>
+                    <a href="https://linkedin.com/in/anagha-p-v" class="text-white bg-blue-600 hover:bg-blue-700 py-3 px-6 rounded-full font-semibold transition-transform duration-300 transform hover:scale-105 inline-block">
+                        View my LinkedIn
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="card p-4">
+                        <!-- Placeholder for your profile photo -->
+                        <img src="anagha image.jpeg" alt="Anagha P V" class="w-full h-auto rounded-xl">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Skills and Projects Page -->
+        <div id="work" class="page">
+             <!-- Skills Section -->
+            <section id="skills" class="mb-24">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                    <!-- Programming Languages -->
+                    <div class="card p-4 flex flex-col items-center text-center">
+                        <div class="skill-icon mb-2">
+                             <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-11v2h2v-2h-2zm0 4v2h2v-2h-2z"/></svg>
+                        </div>
+                        <span class="font-semibold text-gray-200">Languages</span>
+                        <p class="text-sm text-gray-400 mt-1">C, Python, Java, Dart</p>
+                    </div>
+                    <!-- Web Development -->
+                    <div class="card p-4 flex flex-col items-center text-center">
+                        <div class="skill-icon mb-2">
+                            <svg class="w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-2h-2v2zm0-4h2V7h-2v6z"/></svg>
+                        </div>
+                        <span class="font-semibold text-gray-200">Web Development</span>
+                        <p class="text-sm text-gray-400 mt-1">HTML, CSS</p>
+                    </div>
+                    <!-- App Development -->
+                    <div class="card p-4 flex flex-col items-center text-center">
+                        <div class="skill-icon mb-2">
+                            <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM8 17.5l4-4 4 4v-9.5H8v9.5z"/></svg>
+                        </div>
+                        <span class="font-semibold text-gray-200">App Development</span>
+                        <p class="text-sm text-gray-400 mt-1">Flutter</p>
+                    </div>
+                    <!-- Database -->
+                    <div class="card p-4 flex flex-col items-center text-center">
+                        <div class="skill-icon mb-2">
+                            <svg class="w-8 h-8 text-purple-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17 12c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM9 2a1 1 0 011-1h4a1 1 0 011 1v1a1 1 0 01-1 1h-4a1 1 0 01-1-1V2zm-2 5v2h12V7H7zm0 4v2h12v-2H7z"/></svg>
+                        </div>
+                        <span class="font-semibold text-gray-200">Database</span>
+                        <p class="text-sm text-gray-400 mt-1">MySQL</p>
+                    </div>
+                    <!-- Tools & Platforms -->
+                    <div class="card p-4 flex flex-col items-center text-center">
+                        <div class="skill-icon mb-2">
+                            <svg class="w-8 h-8 text-indigo-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 13h2v2h-2v-2zm0-4h2v2h-2v-2zM9 9h6v6h-6V9z"/></svg>
+                        </div>
+                        <span class="font-semibold text-gray-200">Tools</span>
+                        <p class="text-sm text-gray-400 mt-1">VS Code, GitHub, Canva</p>
+                    </div>
+                    <!-- Soft Skills -->
+                    <div class="card p-4 flex flex-col items-center text-center">
+                        <div class="skill-icon mb-2">
+                            <svg class="w-8 h-8 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-2 16h4v-2h-4v2zm0-4h4V6h-4v8z"/></svg>
+                        </div>
+                        <span class="font-semibold text-gray-200">Soft Skills</span>
+                        <p class="text-sm text-gray-400 mt-1">Problem Solving, Teamwork</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Projects Section -->
+            <section class="mb-24">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- Project 1: Alignify -->
+                    <div class="card p-4 project-card overflow-hidden">
+                        <div class="relative w-full h-56 rounded-xl overflow-hidden mb-4">
+                            <!-- Placeholder image for Alignify -->
+                            <img src="https://placehold.co/600x400/1e202e/e2e8f0?text=Alignify+Web+App" alt="Alignify Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 project-title text-white">Alignify - Posture Correction Web Application</h3>
+                        <p class="text-sm font-semibold text-gray-400 mb-4">A real-time posture monitoring system</p>
+                        <p class="text-gray-300">
+                           A web-based posture monitoring system that uses a webcam to detect body posture in real-time using MediaPipe and TensorFlow.js. The system provides instant visual feedback to help users correct poor posture and improve spinal health. It includes features like posture tips, workout suggestions, and user authentication using Firebase.
+                        </p>
+                    </div>
+                    <!-- Project 2: Sahaya -->
+                    <div class="card p-4 project-card overflow-hidden">
+                        <div class="relative w-full h-56 rounded-xl overflow-hidden mb-4">
+                            <!-- Placeholder image for Sahaya -->
+                            <img src="https://placehold.co/600x400/1e202e/e2e8f0?text=Sahaya" alt="Sahaya Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 project-title text-white">Sahaya - Empowering Relief</h3>
+                        <p class="text-sm font-semibold text-gray-400 mb-4">A platform for disaster relief management</p>
+                        <p class="text-gray-300">
+                           A platform that connects victims, volunteers, donors, and camp managers with real-time SOS routing, resource tracking, and AI-powered alerts.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Certificates Page -->
+        <div id="certificates" class="page">
+            <section class="mb-24">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-white">Certificates</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">App Development Internship</h3>
+                        <p class="text-sm text-gray-400 mb-4">Genzee Technologies (Flutter)</p>
+                        <p class="text-gray-300">Internship certificate for App Development using Flutter.</p>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Python Zero To Hero Bootcamp</h3>
+                        <p class="text-sm text-gray-400 mb-4">Completed Bootcamp</p>
+                        <p class="text-gray-300">Certified in Python through an intensive bootcamp.</p>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">LaTeX Workshop</h3>
+                        <p class="text-sm text-gray-400 mb-4">Completed Workshop</p>
+                        <p class="text-gray-300">Certificate of completion for a workshop on LaTeX.</p>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">MS Word Workshop</h3>
+                        <p class="text-sm text-gray-400 mb-4">Completed Workshop</p>
+                        <p class="text-gray-300">Certificate of completion for a workshop on MS Word.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-white">Get in Touch</h2>
+                <div class="card p-8 flex flex-col md:flex-row justify-around items-center space-y-6 md:space-y-0 md:space-x-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="contact-icon-bg">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        </div>
+                        <span class="font-semibold text-lg text-gray-200 mt-2">Email</span>
+                        <a href="mailto:anagharaj2303@gmail.com" class="text-gray-400 hover:text-blue-500 transition-colors">anagharaj2303@gmail.com</a>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="contact-icon-bg">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <span class="font-semibold text-lg text-gray-200 mt-2">Phone</span>
+                        <a href="tel:+919074131397" class="text-gray-400 hover:text-blue-500 transition-colors">+91 9074131397</a>
+                    </div>
+                    <div class="flex flex-col items-center">
+                         <div class="contact-icon-bg">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm4-2a1 1 0 011-1h6a1 1 0 011 1v1h-8V3zm10 5H4v7a1 1 0 001 1h10a1 1 0 001-1V8z"/></svg>
+                        </div>
+                        <span class="font-semibold text-lg text-gray-200 mt-2">Location</span>
+                        <span class="text-gray-400">Kozhikode, India</span>
+                    </div>
+                     <div class="flex flex-col items-center">
+                        <div class="contact-icon-bg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.771 1.691 4.919 4.919.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.228-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.251-.148-4.77-1.691-4.919-4.919-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.667-4.77 4.919-4.919 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.668 0-4.062.016-5.483.078-4.423.202-6.702 2.585-6.904 6.904-.062 1.42-.078 1.815-.078 5.483s.016 4.062.078 5.483c.202 4.422 2.585 6.702 6.904 6.904 1.421.062 1.816.078 5.483.078 3.668 0 4.062-.016 5.483-.078 4.422-.202 6.702-2.585 6.904-6.904.062-1.42.078-1.815.078-5.483s-.016-4.062-.078-5.483c-.202-4.423-2.585-6.702-6.904-6.904-1.421-.062-1.816-.078-5.483-.078z"/><path d="M12 6.865c-3.321 0-6.005 2.684-6.005 6.005s2.684 6.005 6.005 6.005c3.32 0 6.005-2.684 6.005-6.005s-2.685-6.005-6.005-6.005zm0 10.005c-2.203 0-4.005-1.802-4.005-4.005s1.802-4.005 4.005-4.005 4.005 1.802 4.005 4.005-1.802 4.005-4.005 4.005zm6.307-10.825c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5z"/></svg>
+                        </div>
+                        <span class="font-semibold text-lg text-gray-200 mt-2">Instagram</span>
+                        <a href="https://www.instagram.com/_anaghaahh" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors">@_anaghaahh</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Search Page -->
+        <div id="search" class="page">
+            <section class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-white">Search my Portfolio</h2>
+                <div class="card p-8">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search for skills, projects, or interests...">
+                    <div id="searchResults" class="mt-8 text-gray-300 space-y-4 search-results">
+                        <!-- Search results will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="text-center p-8 text-gray-500">
+        <p>&copy; 2024 Anagha P V. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a');
+            const pages = document.querySelectorAll('.page');
+            const searchInput = document.getElementById('searchInput');
+            const searchResultsContainer = document.getElementById('searchResults');
+
+            const portfolioData = {
+                skills: [
+                    "C, Python, Java, Dart",
+                    "HTML, CSS",
+                    "Flutter",
+                    "MySQL",
+                    "VS Code, GitHub, Canva",
+                    "Problem Solving, Teamwork"
+                ],
+                projects: [
+                    { 
+                        title: "Alignify - Posture Correction Web Application",
+                        description: "A web-based posture monitoring system that uses a webcam to detect body posture in real-time using MediaPipe and TensorFlow.js. The system provides instant visual feedback to help users correct poor posture and improve spinal health. It includes features like posture tips, workout suggestions, and user authentication using Firebase."
+                    },
+                    {
+                        title: "Sahaya - Empowering Relief",
+                        description: "A platform that connects victims, volunteers, donors, and camp managers with real-time SOS routing, resource tracking, and AI-powered alerts."
+                    }
+                ],
+                certificates: [
+                    "Internship certificate for App Development using Flutter at Genzee Technologies",
+                    "National level Webinar on topic Career Options and Industry Orientations and Industry Orientation conducted by Genzee Technologies",
+                    "Python Zero To Hero Bootcamp",
+                    "LaTeX Workshop",
+                    "MS Word Workshop"
+                ],
+                interests: [
+                    "Web Development",
+                    "App Development",
+                    "Music and Books",
+                    "Artificial Intelligence"
+                ]
+            };
+
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                document.querySelector(pageId).classList.add('active');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                });
+                document.querySelector(`[href="${pageId}"]`).classList.add('active-link');
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    history.pushState(null, '', targetId);
+                    showPage(targetId);
+                });
+            });
+
+            // Handle back/forward button
+            window.addEventListener('popstate', () => {
+                if (window.location.hash) {
+                    showPage(window.location.hash);
+                } else {
+                    showPage('#home');
+                }
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase();
+                searchResultsContainer.innerHTML = '';
+                
+                if (query.length > 0) {
+                    let foundResults = false;
+
+                    // Search skills
+                    portfolioData.skills.forEach(skill => {
+                        if (skill.toLowerCase().includes(query)) {
+                            const p = document.createElement('p');
+                            p.innerHTML = `<span class="font-bold">Skill:</span> ${skill}`;
+                            searchResultsContainer.appendChild(p);
+                            foundResults = true;
+                        }
+                    });
+
+                    // Search projects
+                    portfolioData.projects.forEach(project => {
+                        if (project.title.toLowerCase().includes(query) || project.description.toLowerCase().includes(query)) {
+                            const p = document.createElement('p');
+                            p.innerHTML = `<span class="font-bold">Project:</span> ${project.title}<br>${project.description}`;
+                            searchResultsContainer.appendChild(p);
+                            foundResults = true;
+                        }
+                    });
+
+                    // Search certificates
+                    portfolioData.certificates.forEach(cert => {
+                        if (cert.toLowerCase().includes(query)) {
+                            const p = document.createElement('p');
+                            p.innerHTML = `<span class="font-bold">Certificate:</span> ${cert}`;
+                            searchResultsContainer.appendChild(p);
+                            foundResults = true;
+                        }
+                    });
+
+                    // Search interests
+                    portfolioData.interests.forEach(interest => {
+                        if (interest.toLowerCase().includes(query)) {
+                            const p = document.createElement('p');
+                            p.innerHTML = `<span class="font-bold">Interest:</span> ${interest}`;
+                            searchResultsContainer.appendChild(p);
+                            foundResults = true;
+                        }
+                    });
+
+                    if (!foundResults) {
+                        const p = document.createElement('p');
+                        p.textContent = "No results found.";
+                        searchResultsContainer.appendChild(p);
+                    }
+                }
+            });
+
+            // Initial page load
+            if (window.location.hash) {
+                showPage(window.location.hash);
+            } else {
+                showPage('#home');
+            }
+        });
+    </script>
+</body>
+</html>
+
